@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace _3_feladat_Linq
 {
-    internal class Ramen
+    class Ramen
     {
         public int RamenId { get; set; }
         public string Brand { get; set; }   
