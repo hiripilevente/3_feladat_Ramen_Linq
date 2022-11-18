@@ -8,5 +8,8 @@ namespace _3_feladat_Linq
 {
     internal class Country
     {
+        public int CountryID { get; set; }
+        public string Name { get; set; }    
+
     }
 }
