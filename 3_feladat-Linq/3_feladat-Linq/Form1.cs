@@ -20,6 +20,8 @@ namespace _3_feladat_Linq
         {
             InitializeComponent();
             LoadData("ramen.csv");
+            listCountries.DisplayMember = "Name";
+            GetCountries();
         }
 
         private void LoadData(string fileName)
@@ -64,6 +66,44 @@ namespace _3_feladat_Linq
             }
 
             return currentCountry;
+        }
+
+        private void GetCountries()
+        {
+            var countriesList = from c in countries
+                                where c.Name.Contains(txtCountryFilter.Text)
+                                orderby c.Name
+                                select c;
+            listCountries.DataSource = countriesList.ToList();
+        }
+        private void txtCountryFilter_TextChanged(object sender, EventArgs e)
+        {
+            GetCountries();
+        }
+
+        private void listCountries_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            var country = (Country)((ListBox)sender).SelectedItem;
+            if (country == null)
+                return;
+
+            var countryRamens = from r in ramens
+                                where r.CountryFK == country.CountryID
+                                select r;
+
+            var groupedRamens = from r in countryRamens
+                                group r.Stars by r.Brand into g
+                                select new
+                                {
+                                    BrandName = g.Key,
+                                    AverageRating = Math.Round(g.Average(), 2)
+                                };
+
+            var orderedGroups = from g in groupedRamens
+                                orderby g.AverageRating descending
+                                select g;
+
+            dgwRamen.DataSource = orderedGroups.ToList();
         }
     }
 }

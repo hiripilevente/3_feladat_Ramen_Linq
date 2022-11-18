@@ -29,31 +29,39 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.listBox1 = new System.Windows.Forms.ListBox();
+            this.txtCountryFilter = new System.Windows.Forms.TextBox();
+            this.listCountries = new System.Windows.Forms.ListBox();
+            this.dgwRamen = new System.Windows.Forms.DataGridView();
             this.countryBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.countryBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.dgwRamen)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.countryBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.countryBindingSource1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
-            // textBox1
+            // txtCountryFilter
             // 
-            this.textBox1.Location = new System.Drawing.Point(12, 12);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(195, 20);
-            this.textBox1.TabIndex = 0;
+            this.txtCountryFilter.Location = new System.Drawing.Point(12, 12);
+            this.txtCountryFilter.Name = "txtCountryFilter";
+            this.txtCountryFilter.Size = new System.Drawing.Size(195, 20);
+            this.txtCountryFilter.TabIndex = 0;
             // 
-            // listBox1
+            // listCountries
             // 
-            this.listBox1.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.countryBindingSource, "Name", true));
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.Location = new System.Drawing.Point(12, 38);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(195, 407);
-            this.listBox1.TabIndex = 1;
+            this.listCountries.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.countryBindingSource, "Name", true));
+            this.listCountries.FormattingEnabled = true;
+            this.listCountries.Location = new System.Drawing.Point(12, 38);
+            this.listCountries.Name = "listCountries";
+            this.listCountries.Size = new System.Drawing.Size(195, 407);
+            this.listCountries.TabIndex = 1;
+            // 
+            // dgwRamen
+            // 
+            this.dgwRamen.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgwRamen.Location = new System.Drawing.Point(213, 38);
+            this.dgwRamen.Name = "dgwRamen";
+            this.dgwRamen.Size = new System.Drawing.Size(575, 407);
+            this.dgwRamen.TabIndex = 2;
             // 
             // countryBindingSource
             // 
@@ -63,27 +71,19 @@
             // 
             this.countryBindingSource1.DataSource = typeof(_3_feladat_Linq.Country);
             // 
-            // dataGridView1
-            // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(213, 38);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(575, 407);
-            this.dataGridView1.TabIndex = 2;
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.listBox1);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.dgwRamen);
+            this.Controls.Add(this.listCountries);
+            this.Controls.Add(this.txtCountryFilter);
             this.Name = "Form1";
             this.Text = "Form1";
+            ((System.ComponentModel.ISupportInitialize)(this.dgwRamen)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.countryBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.countryBindingSource1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -91,11 +91,11 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.ListBox listBox1;
+        private System.Windows.Forms.TextBox txtCountryFilter;
+        private System.Windows.Forms.ListBox listCountries;
         private System.Windows.Forms.BindingSource countryBindingSource;
         private System.Windows.Forms.BindingSource countryBindingSource1;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgwRamen;
     }
 }
 
